@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>JRP: Commission</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="jrp.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+  
+  <script>
+    function captureFormData(f) 
+    {
+      // data will contain comma separated values for popup box
+      var data = "", i, len;
+      
+      // set len to number of form elements f contains
+      len = f.length;
+
+      // traverse elements, one by one, where i is current element
+      for (i = 0; i < len; i++)  
+      {
+        // append value of current form element to data
+        data = data + f.elements[i].value;
+
+        // if not at end of form, so not last form element yet
+        if (i < len-1) 
+        { 
+          data += ", ";  // append comma
+        }
+      }
+      // in pop up display comma separated values stored in data
+      alert (data);  
+    }
+  </script>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i></a>
+        </label>
+        <ul class="navbar">
+            <li><a href="index.html" title="Go Home">Home</a></li>
+            <li><a href="artwork.html" title="Go to Artwork">Artwork</a></li>
+            <li><a href="design.html" title="Go to Design">Design</a></li>
+            <li><a href="video.html" title="Go to Video">Video</a></li>
+            <li><a href="audio.html" title="Go to Audio">Audio</a></li>
+            <li><a href="commission.html" id="menu-chosen" title="Go to Commission">Commission</a></li>
+        </ul>
+        <h1>Janine Rodriguez Portfolio</h1>
+    </header>
+
+    <div id="homehero">
+        <h2>Commission</h2>
+    </div>
+
+    <main>
+        <h3 class=tabt>Prices</h3>
+        <p class="tabst">(may vary)</p>
+        <table>
+            <tr>
+              <th class="centerJustify">Artwork</th>
+              <th>Design</th>
+              <th>Video</th>
+              <th>Audio</th>
+            </tr>
+            <tr>
+              <td class="centerJustify">Color<br>$40</td>
+              <td>Graphic<br>$30-$50</td>
+              <td>Editing<br>$30-$40</td>
+              <td>Voiceover<br>$20</td>
+            </tr>
+            <tr>
+              <td class="centerJustify">Linework<br>$25</td>
+              <td>Character<br>$50</td>
+              <td>Animation<br>$30-$100</td>
+              <td>Music<br>$60</td>
+            </tr>
+          </table>
+
+          <form id="frm">
+            <h3 class="frmt">Request Commission</h3>
+            <div class="grid-container">
+              <div class="rightJustify">
+                <label for="myFName"> First Name: </label>
+              </div>
+              <div class="leftJustify">
+                <input type="text" id="myFName" name="myFName" required>
+              </div>
+        
+              <div class="rightJustify">
+                <label for="myLName"> Last Name: </label>
+              </div>
+              <div class="leftJustify">
+                <input type="text" id="myLName" name="myLName" required>
+              </div>
+        
+              <div class="rightJustify">
+                <label for="myEmail"> E-mail: </label>
+              </div>
+              <div class="leftJustify">
+                <input type="email" id="myEmail" name="myEmail" required>
+              </div>
+              
+              <div class="rightJustify">
+                <label for="myService"> Service: </label>
+              </div>
+              <div class="leftJustify">
+                <select id="myService" name="myService">
+                  <option>Artwork</option>
+                  <option>Design</option>
+                  <option>Video</option>
+                  <option>Audio</option>
+                </select>
+              </div>
+              
+              <div class="rightJustify">
+                <label for="myComments"> Comments: </label>
+              </div>
+              <div class="leftJustify">
+                <textarea id="myComments" name="myComments" placeholder="(Describe your request)" rows="6" cols="25"></textarea>
+              </div>
+        
+              <div class="rightJustify">
+                &nbsp;
+              </div>
+              <div class="leftJustify">
+                <input type="submit" id="mySubmit" value="Submit">
+              </div>
+            </div>
+            </form>
+            </div>
+        
+              <script>
+                $("#frm").validate();  // validate frm form elements
+          
+                $(function () {
+                  $('#frm').submit(function () {  // redefine submit for frm
+                      if($(this).valid()) {  // if this form is valid
+                          captureFormData(this);  // send it to captureFormData
+                      }
+                  });
+                });
+              </script>
+    </main>
+    <footer>
+        <p id="addy">
+            Janine Rodriguez Multimedia<br>
+            Tampa, Florida<br>
+        </p>
+
+        <p id="copy">
+            &copy; 2023 Janine Rodriguez Multimedia<br>
+            <a href="mailto:jrodriguez529@hawkmail.hccfl.edu" title="Send e-mail to jrodriguez529@hawkmail.hccfl.edu">jrodriguez529@hawkmail.hccfl.edu</a><br> 
+            555-312-8765
+        </p>
+    </footer>
+
+</body>
+</html>
