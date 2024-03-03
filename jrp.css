@@ -43,6 +43,10 @@ a:visited {
     color: rgb(166, 11, 255);
 }
 
+#note {
+    font-weight: bold;
+}
+
 .navbar {
     letter-spacing: 1px;
     padding: 0.2em;
